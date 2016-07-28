@@ -6,12 +6,13 @@ class User
 
   property :id, Serial
   property :name, String
-  property :email, String
+  property :email, String, format: :email_address, required: true
   property :password_digest, String, length: 60
 
   attr_accessor :password_confirmation
   attr_reader :password
   validates_confirmation_of :password
+  validates_format_of :email, as: :email_address
 
 #  def password
 #    @password ||= Password.new(password_hash)

@@ -24,7 +24,7 @@ register Sinatra::Flash
   get '/users/new' do
     @user = User.new
     erb :'users/new'
-  end
+  end    
 
   post '/users' do
     @user = User.new(name: params[:name],

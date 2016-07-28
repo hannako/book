@@ -17,11 +17,19 @@ feature 'Creating user account' do
 # Write a failing feature test that checks that when a user signs up
 #  with a mismatching password confirmation that no new users are created
 
-  scenario 'the user has to reneter their password for validation check' do
+  scenario 'the user has to re-enter their password for validation check' do
 
     expect { sign_up(password_confirmation: 'wrong') }.not_to change(User, :count)
     expect(current_path).to eq '/users'
     expect(page).to have_content "Password and confirmation password do not match"
   end
 
+
+  scenario "the user can't sign up without an email address" do
+    expect{ sign_up(email: nil) }.not_to change(User, :count)
+  end
+
+  scenario "I can't sign up with an invalid email address" do
+    expect { sign_up(email: "invalid@email") }.not_to change(User, :count)
+  end
 end
