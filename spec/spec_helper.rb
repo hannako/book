@@ -2,7 +2,7 @@ ENV["RACK_ENV"] = "test"
 require 'capybara/rspec'
 require './app'
 require 'database_cleaner'
-
+require './spec/web_helpers'
 
   RSpec.configure do |config|
     # Everything in this block runs once before all the tests run

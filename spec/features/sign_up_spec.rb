@@ -7,17 +7,11 @@ feature 'Creating user account' do
 
   scenario 'the user is able to sign up' do
 
-    visit '/'
-    fill_in :name, with: 'Arunas'
-    fill_in :email, with: 'Arunas@gmail.com'
-    fill_in :password, with: 'password1234'
-
-
-    expect{ click_button 'Register' }.to change{ User.all.count }.by(1)
+    expect{ sign_up }.to change(User, :count).by(1)
     expect(page).to have_content 'Welcome Arunas!'
 
     user = User.first
-    expect(user.email).to eq 'Arunas@gmail.com'
+    expect(user.email).to eq 'arunas@gmail.com'
 
   end
 end
