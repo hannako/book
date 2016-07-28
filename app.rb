@@ -24,7 +24,7 @@ register Sinatra::Flash
   get '/users/new' do
     @user = User.new
     erb :'users/new'
-  end    
+  end
 
   post '/users' do
     @user = User.new(name: params[:name],
@@ -36,7 +36,7 @@ register Sinatra::Flash
       session[:user_id] = @user.id
       redirect '/'
     else
-      flash.now[:message] = "Password and confirmation password do not match"
+      flash.now[:errors] = @user.errors.full_messages 
       erb :'users/new'
     end
   end
