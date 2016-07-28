@@ -2,7 +2,7 @@
 
   include DataMapper::Resource
 
-    # has n, :links through: Resource
+    has n, :links, through: Resource
     property :id, Serial
     property :name, String
 
