@@ -26,7 +26,7 @@ feature 'Tagging links' do
     expect(current_path).to eq '/links'
 
     link = Link.first
-    expect(link.tags.map(&:name)).to eq(['code', 'education', 'ruby'])
+    expect(link.tags.map(&:name)).to include('code', 'education', 'ruby')
   end
 
 end
