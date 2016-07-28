@@ -16,4 +16,17 @@ feature 'Tagging links' do
     expect(link.tags.map(&:name)).to include('work')
   end
 
+  scenario "the user can add multiple tags" do
+    visit '/links/new'
+    fill_in :title, with: 'Makers Academy'
+    fill_in :url, with: 'www.makersacademy.com'
+    fill_in :tags, with: 'code, education, ruby'
+    click_button 'Submit'
+
+    expect(current_path).to eq '/links'
+
+    link = Link.first
+    expect(link.tags.map(&:name)).to eq(['code', 'education', 'ruby'])
+  end
+
 end
