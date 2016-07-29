@@ -20,10 +20,4 @@ feature 'Signing in to your account' do
     expect(User.authenticate(user.email, 'wrong_stupid_password')).to be_nil
   end
 
-  def sign_in(email:, password:)
-    visit '/sessions/new'
-    fill_in :email, with: email
-    fill_in :password, with: password
-    click_button 'Sign in'
-  end
 end
