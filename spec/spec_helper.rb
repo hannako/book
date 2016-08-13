@@ -7,9 +7,9 @@ require 'capybara/rspec'
 require 'rspec'
 require 'database_cleaner'
 
-require './app/models/link.rb'
-require './app/models/tag.rb'
-# require './data_mapper_setup.rb'
+require './app/models/link'
+require './app/models/tag'
+require './data_mapper_setup.rb'
 
 Capybara.app = BookmarkManager
 
