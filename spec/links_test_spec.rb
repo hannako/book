@@ -27,4 +27,18 @@ feature 'Links on the homepage' do
       end
   end
 
+  scenario 'I can tag links' do
+    visit '/links'
+    click_button 'add link'
+    fill_in 'title', with: 'BBC News'
+    fill_in 'url', with: 'www.bbc/news.co.uk'
+    fill_in 'tag', with: 'news'
+    click_button 'submit'
+      within 'ul#links' do
+        expect(page).to have_content('www.bbc/news.co.uk')
+      end
+    link = Link.first
+    expect (link.tag).to eq('news')
+  end
+
 end
