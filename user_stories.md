@@ -5,13 +5,15 @@ I would like to see a list of links on the homepage
 
 US 2
 As a time-pressed user
-So that I can quickly find web sites I recently bookmarked
-I would like to see links in descending chronological order
+So that I can save a website
+I would like to add the site's address and title to my bookmark manager
 
 US 3
 As a time-pressed user
-So that I can save a website
-I would like to add the site's address and title to my bookmark manager
+So that I can quickly find web sites I recently bookmarked
+I would like to see links in descending chronological order
+
+
 
 US 4
 As a time-pressed user
