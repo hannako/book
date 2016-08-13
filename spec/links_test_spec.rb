@@ -1,7 +1,7 @@
 # As a time-pressed user
 # So that I can quickly go to web sites I regularly visit
 # I would like to see a list of links on the homepage
-
+require 'pry'
 feature 'Links on the homepage' do
 
   scenario 'I can see links on my links page' do
@@ -38,6 +38,7 @@ feature 'Links on the homepage' do
         expect(page).to have_content('www.bbc/news.co.uk')
       end
     link = Link.first
+
     expect (link.tag).to eq('news')
   end
 
